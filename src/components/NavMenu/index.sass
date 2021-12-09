@@ -1,0 +1,20 @@
+@import "@assets/sass/base"
+.NavMenu
+    +setFlex(flex-start)
+.NavMenu-li
+    margin-right: 40px
+    &:last-child
+        margin-right: 0
+    a
+        +setFont(400, 16px, var(--color-black))
+        transition: color 0.25s
+        &:hover
+            color: transparentize(#222, 0.4)
+.NavMenu-li-white
+    a
+        +setFont(400, 16px, #fff)
+        transition: color 0.25s
+        &:hover
+            color: darken(#fff, 0.4)
+
+            

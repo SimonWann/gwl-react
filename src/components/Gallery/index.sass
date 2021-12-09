@@ -1,0 +1,14 @@
+@import '@assets/sass/base'
+.gallery
+    +setFlex(flex-start)
+    .gallery-card
+        
+=setMedia($screen, $height)
+    @media screen and (min-width: $screen)
+        .gallery
+            .gallery-swiper
+                height: $height
++setMedia($sl-screen, 918px)
++setMedia($sm-screen, 1666px)
++setMedia($md-screen, max-content)
++setMedia($lg-screen, max-content)

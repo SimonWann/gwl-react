@@ -1,0 +1,32 @@
+@import '@assets/sass/base'
+=setMedia($screen, $marginX: 120px)
+    @media screen and (min-width: $screen)
+        .article
+            background: #121212
+            .article-main
+                margin: 80px $marginX 120px
+                .article-main-h3
+                    +setFont(400, 60px, #fff)
+                    @if $screen == $sl-screen
+                        margin: 0 32px
+                    @else
+                        margin: 0px
+                    margin-bottom: 20px
+                .article-main-p
+                    +setFont(200, 20px, transparentize(#fff, 0.6))
+                    @if $screen == $sl-screen
+                        margin: 0 32px
+                    @else
+                        margin: 0px
+                    margin-bottom: 60px
+                .article-main-img
+                    height: 2062px
+                    background: #767676
+            .article-copyright
+                +setFont(400, 16px, transparentize(#fff, 0.6))
+                padding-bottom: 24px
+                text-align: center
++setMedia($sl-screen, 0)
++setMedia($sm-screen, 80px)
++setMedia($md-screen)
++setMedia($lg-screen)

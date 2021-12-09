@@ -1,0 +1,13 @@
+@import '@assets/sass/base'
+.Nav
+    +setFlex(space-between, center)
+    padding: 62px 120px
+=setMedia($screen, $padding)
+    @media screen and (min-width: $screen)
+        .Nav
+            +setFlex(space-between, center)
+            padding: $padding 
++setMedia($sl-screen, 32px 32px)
++setMedia($sm-screen, 62px 80px)
++setMedia($md-screen, 42px 120px 62px)
++setMedia($lg-screen, 62px 120px)

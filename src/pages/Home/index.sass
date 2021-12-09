@@ -1,0 +1,106 @@
+@import '@assets/sass/base'
+=setMedia($screen, $direction, $basis, $sm, $md, $galleryLeft: 80px, $galleryBottom: 0px)
+    @media screen and (min-width: $screen)
+        .home
+            .home-first
+                .home-content
+                    +setFlex(flex-start, flex-start, $direction)
+                    .introduce-ul
+                        // @if $direction
+                    .introduce-li-md
+                        display: $md
+                    .introduce-li-sm
+                        display: $sm
+                    .home-gallery
+                        margin-left: $galleryLeft
+                        flex-basis: $basis
+                        margin-bottom: $galleryBottom
++setMedia($sl-screen, column, 100%, none, block, 32px, 100px)
+@media screen and (min-width: $sl-screen)
+    .home
+        .home-first
+                .home-content
+                    .introduce-dom
+                        padding-left: 32px
+                        margin-bottom: 80px
+
++setMedia($sm-screen, column, 100%, block, none, 80px, 100px)
+@media screen and (min-width: $sm-screen)
+    .home
+        .home-first
+                .home-content
+                    .introduce-dom
+                        padding-left: 80px
+                        margin-bottom: 100px
+    
++setMedia($md-screen, row, 718px, none, block)
+@media screen and (min-width: $md-screen)
+    .home
+        .home-first
+                .home-content
+                    justify-content: space-between
+                    .introduce-dom
+                        padding-left: 120px
+                        margin-bottom: 0px
+                        padding-top: 111px
+    
++setMedia($lg-screen, row, 958px, none, block)
+@media screen and (min-width: $md-screen)
+    .home
+        .home-first
+                .home-content
+                    justify-content: space-between
+                    .introduce-dom
+                        padding-left: 120px
+                        margin-bottom: 0px
+                        padding-top: 80px
+.home
+    overflow-x: hidden
+    .move-spacer
+        height: 100vh
+        box-sizing: border-box
+        width: 200vw
+        position: fixed
+        background: transparent
+        z-index: 10
+        +setFlex
+        .move-spacer-item-black
+            flex-grow: 1
+            height: 100%
+            box-sizing: border-box
+            background: #000
+        .move-spacer-item-white  
+            flex-grow: 1
+            height: 100%
+            box-sizing: border-box
+            background: #fff
+    .white-screen-spacer
+        height: 100vh
+        width: 100vw
+        box-sizing: border-box
+    .home-first
+        min-height: 100vh
+        box-sizing: border-box
+        padding-bottom: 54px
+        position: fixed
+        top: 0
+        left: 0
+        .home-content
+            // +setFlex
+            .introduce-ul
+                flex-basis: 50%
+                li
+                    +setFont(200, 40px, var(--color-black))
+                    line-height: 46.12px
+                .introduce-li
+                    height: 46.12px
+                    overflow: hidden
+                    .introduce-li-white-spacer
+                        height: 46.12px
+                    .introduce-li-value
+                        position: relative
+                        z-index: 1
+            .home-gallery
+                // flex-basis: 718px
+                overflow: hidden
+    .home-second

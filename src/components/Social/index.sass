@@ -1,0 +1,21 @@
+@import '@assets/sass/base'
+.social
+    +setFlex(flex-start, center)
+    .social-icons-li
+        margin-right: 32px
+        .social-icons-li-a
+            svg
+                path
+                    fill: var(--color-black)
+                    transition: fill 0.25s
+                &:hover
+                    path
+                        fill: transparentize(#222, 0.4)
+        .social-icons-li-a-light
+            svg
+                path
+                    fill: #fff
+                    transition: fill 0.25s
+                &:hover
+                    path
+                        fill: darken(#fff, 0.4)

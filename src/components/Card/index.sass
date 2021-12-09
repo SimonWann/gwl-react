@@ -1,0 +1,39 @@
+@import '@assets/sass/base'
+=setMedia($screen, $width, $height, $titleTop: 32px, $cardTop: 8px)
+    @media screen and (min-width: $screen)
+        .card
+            .card-img-container
+                width: $width
+                height: $height
+            .card-title
+                margin-top: $titleTop
+            .card-p
+                margin-top: $cardTop
+.card
+    .card-img-container
+        width: 439px
+        height: 511px
+        background: var(--color-black)
+        box-sizing: border-box
+        overflow: hidden
+        background: var(--color-black)
+        
+        img
+            min-width: 100%
+            min-height: 100%
+            transition: transform 1.5s ease
+            transform: scale(1)
+            &:hover
+                transform: scale(1.2)
+    .card-title
+        margin-top: 32px
+        +setFont(500, 22px ,var(--color-black))
+        line-height: 26.6px
+    .card-p
+        margin-top: 8px
+        line-height: 16.24px
+        +setFont(300, 14px, transparentize(#222, 0.6))
++setMedia($sl-screen, 311px ,362px, 16px)
++setMedia($sm-screen, 608px ,708px, 24px)
++setMedia($md-screen, 360px ,419px)
++setMedia($lg-screen, 439px ,511px)

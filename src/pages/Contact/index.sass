@@ -1,0 +1,46 @@
+@import '@assets/sass/base'
+=setMedia($media, $left: 120px, $top: 20px, $spacerBasis: 764px)
+    @media screen and (min-width: $media) 
+        .contact
+            .contact-article
+                padding-left: $left
+                margin-top: $top
+               
+                .contact-black-spacer
+                    box-sizing: border-box
+                    flex-basis: $spacerBasis
+                    height: calc(100vh - 184px - 20px)
+                    background: #C4C4C4
+                @if $media == $sl-screen
+                    +setFlex(space-between, flex-start)
+                    .contact-black-spacer
+                        display: none
+                @else if $media == $sm-screen
+                    +setFlex(space-between, flex-start, column)
+                    .contact-black-spacer
+                        display: block
+                        width: 557px
+                        margin-top: 80px
+                @else 
+                    +setFlex(space-between, flex-start)
+                    // display: block
+            .copyright-container
+                margin-left: $left
+                @if $media == $sl-screen
+                    position: static
+                    margin-top: 24px
+                    margin-bottom: 60px
+                @else if $media == $sm-screen
+                    position: static
+                    margin-top: 40px
+                    margin-bottom: 24px
+                    text-align: center
+                @else
+                    bottom: 24px
+                    display: none
+                .copyright-text
+                    +setFont(300, 16px, transparentize(#222, 0.6))
++setMedia($sl-screen, 32px, 18px, 0)
++setMedia($sm-screen, 80px, 20px, 608px)
++setMedia($md-screen, 120px, 20px)
++setMedia($lg-screen, 120px, 20px)

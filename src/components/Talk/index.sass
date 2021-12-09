@@ -1,0 +1,39 @@
+@import '@assets/sass/base'
+=setMedia($screen, $height: 100vh, $padding: 160px 120px, $titleBottom: 40px, $enterMatgin: 332px, $titleFontSize: 60px, $socialJustify: space-between, $socialItem: center, $socialFlow: row)
+    @media screen and (min-width: $screen)
+        .talk
+            min-height: $height
+            box-sizing: border-box
+            padding: $padding
+            background: #121212
+            .talk-title
+                +setFont(300, 60px, #fff)
+                font-size: $titleFontSize
+                margin-bottom: $titleBottom
+                white-space: pre-wrap
+            .talk-enter
+                margin-bottom: $enterMatgin
+                +setFlex(flex-start)
+                .talk-enter-text
+                    margin-right: 16px
+                    +setFont(200, 20px, #fff)
+                .talk-enter-icon
+                    border: 1px solid #fff
+                    border-radius: 46px
+                    width: 46px
+                    height: 46px
+                    +setFlex(center, center)
+            .talk-social
+                +setFlex($socialJustify, $socialItem, $socialFlow)
+                .talk-social-copyright
+                    @if $socialFlow == column
+                        margin-top: 24px
+                    @else
+                        margin-top: 0
+                    +setFont(200, 16px, transparentize(#fff, 0.4))
++setMedia($sl-screen, 624px, 60px 32px, 71px, 100px, 40px, flex-start, flex-start, column)
++setMedia($sm-screen, 522px, 100px 80px, 40px, 120px, 40px)
++setMedia($md-screen, 100vh, 160px 120px, 40px, 332px, 60px)
+.talk
+    position: relative
+    z-index: 20

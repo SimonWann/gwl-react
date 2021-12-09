@@ -1,0 +1,38 @@
+@import '@assets/sass/base'
+=setMedia($screen, $width: 496px, $top: 80px)
+    @media screen and (min-width: $screen)
+        .profile
+            .profile-introduce
+                +setFont(200, 40px, var(--color-black))
+                line-height: 46.12px
+                margin-bottom: 60px
+                width: $width
+                padding-top: $top
+            .profile-contact
+                .profile-contact-ul
+                    .profile-contact-li
+                        margin-bottom: 40px
+                        +setFlex(flex-start, flex-start, column)
+                        .profile-contact-li-key
+                            margin-bottom : 4px
+                            +setFont(200, 16px, transparentize(#222, 0.6))
+                        .profile-contact-li-value
+                            +setFont(200, 20px, #222)
+                            white-space: nowrap
+            .profile-social-icons
+                
+            .profile-copyright
+                span
+                    +setFont(300, 16px, transparentize(#222, 0.6))
+                @if $screen == $sl-screen
+                    display: none
+                @else if $screen == $sm-screen
+                    display: none
+                @else
+                    position: fixed
+                    bottom: 24px
+                    display: block            
++setMedia($sl-screen, 311px, 0)
++setMedia($sm-screen, 608px, 48px)
++setMedia($md-screen)
++setMedia($lg-screen)
